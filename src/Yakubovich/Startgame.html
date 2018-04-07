@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to the show!</title>
+</head>
+<body>
+<form>
+    <P>Можно использовать только кириллицу!</P>
+    <p>Вопрос для игроков: <input name="question" pattern="[а-яА-ЯёЁ]+" required title="Можно использовать только кириллицу"></p>
+    <!-- TODO:Добавить возможность использования знаков препинания и пробела. -->
+    <p>Ответ на вопрос: <input name="answer" pattern="[а-яА-ЯёЁ]+" required title="Можно использовать только кириллицу"></p>
+    <!-- TODO:Добавить возможность использования дефиса.-->
+    <button type="submit">Начать игру</button>
+</form>
+</body>
+</html>
