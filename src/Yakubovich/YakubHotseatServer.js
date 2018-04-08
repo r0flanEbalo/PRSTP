@@ -10,6 +10,7 @@ function onRequest(request, response) {
             response.write('File not found!');
         } else {
             response.write(data);
+            console.log("Success!");
         }
         response.end();
     });

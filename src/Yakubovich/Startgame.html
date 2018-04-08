@@ -3,15 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome to the show!</title>
+    <style>
+        textarea:required:invalid, input:required:invalid {
+            background-color: lightyellow;
+        }
+    </style>
 </head>
-<body>
-<form>
-    <P>Можно использовать только кириллицу!</P>
-    <p>Вопрос для игроков: <input name="question" pattern="[а-яА-ЯёЁ]+" required title="Можно использовать только кириллицу"></p>
-    <!-- TODO:Добавить возможность использования знаков препинания и пробела. -->
-    <p>Ответ на вопрос: <input name="answer" pattern="[а-яА-ЯёЁ]+" required title="Можно использовать только кириллицу"></p>
-    <!-- TODO:Добавить возможность использования дефиса.-->
-    <button type="submit">Начать игру</button>
+<body style="background-color:powderblue;">
+<form method="post" action="GetPlayersNames.html">
+    <P>В тексте вопроса можно использовать только кириллицу, числа, знаки препинания и спецсимволы (@ # $ % ^ & ( ) и т.п.).</P>
+    <p>Вопрос для игроков:<br> <input name="question" type="text" pattern="[\.,\?!<>;:'\-\+\*\/=\)\(&\^%\$#@~`№\{\}\[\]*\sа-яА-ЯёЁ0-9]+" maxlength="2000"
+                                  required title="Можно использовать только кириллицу, числа, знаки препинания и спецсимволы (@ # $ % ^ & ( ) и т.п.)."></p>
+<!-- TODO:Доработать валидацию так, чтобы было невозможно вводить ТОЛЬКО знаки пунктуации, спецсимволы и числа в вопросе. Выяснить, как сделать поле для ввода вопроса textarea, чтобы это поле можно было валидировать.-->
+    <p>В ответе может быть только кириллица, пробел и дефис.</p>
+    <p>Ответ на вопрос:<br> <input name="answer" type="text" pattern="^[а-яА-ЯёЁ]+[-\s]{0,1}[а-яА-ЯёЁ]+[-\s]{0,1}[а-яА-ЯёЁ]+" maxlength="50"
+                               required title="Можно использовать только кириллицу, пробел и дефис."></p>
+    <p>Введите количество игроков от 1 до 9</p>
+    <p>Количество игроков:</p><br>
+    <input name="numberofplayers" id="numofpl" type="number" min="1" max="9" required title="Допустимо количество игроков от 1 до 9.">
+    <button type="submit" >Перейти к вводу имен игроков</button> <!--formaction="./GetPlayersNames.html"-->
 </form>
 </body>
 </html>
