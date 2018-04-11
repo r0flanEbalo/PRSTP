@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        title Welcome to the show!
+        style.
+            textarea:required:invalid, input:required:invalid {
+                background-color: lightyellow;
+            }
+    body(style="background-color:powderblue;")
+        form(method="post" action="/Playerspage")
+            p
+                | В тексте вопроса можно использовать только кириллицу, числа, знаки препинания и спецсимволы (@ # $ % ^ & ( ) и т.п.).
+            p
+                | Вопрос для игроков:
+                br
+                input(name="question" type="text" pattern="[\.,\?!<>;:'\-\+\*\/=\)\(&\^%\$#@~`№\{\}\[\]*\sа-яА-ЯёЁ0-9]+" maxlength="2000" required="" title="Можно использовать только кириллицу, числа, знаки препинания и спецсимволы (@ # $ % ^ & ( ) и т.п.).")
+            p В ответе может быть только кириллица, пробел и дефис.
+                    p
+                    | Ответ на вопрос:
+                    br
+                    input(name="answer" type="text" pattern="^[а-яА-ЯёЁ]+[-\s]{0,1}[а-яА-ЯёЁ]+[-\s]{0,1}[а-яА-ЯёЁ]+" maxlength="50" required="" title="Можно использовать только кириллицу, пробел и дефис.")
+                    p Введите количество игроков от 1 до 9
+                    p Количество игроков:
+                    br
+                    input#numofpl(name="numberofplayers" type="number" min="1" max="9" required="" title="Допустимо количество игроков от 1 до 9.")
+                    button(type="submit") Перейти к вводу имен игроков
+        block content
+                    //TODO: разобраться с jade и переписать все

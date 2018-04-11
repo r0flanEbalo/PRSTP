@@ -1,7 +1,10 @@
 var http = require('http');
-var fs = require('fs');
+//var fs = require('fs');
+var app = require('./app');
 
-// TODO: Разобраться в том, как работают коллбеки, а не копипастить их.
+
+// TODO: Разобраться в том, как это работает, а не копипастить втупую.
+/*
 function onRequest(request, response) {
     response.writeHead(200, {'Content-Type': 'text/html'});
     fs.readFile('./Startgame.html', null, function(error, data) {
@@ -15,5 +18,5 @@ function onRequest(request, response) {
         response.end();
     });
 }
-
-http.createServer(onRequest).listen(8080);
+*/
+http.createServer(app.handleRequest).listen(8080);

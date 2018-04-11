@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Кто будет сегодня играть?</title>
+    <script src="CountPlayers.js"></script>
+    <!--
     <script type=text/javascript> function countPlayers() {
         var numberofplayers = document.getElementById("numofpl").numberofplayers;
         var form;
 
-        for (var i = 0; i == numberofplayers; i++) {
+        for (var i = 0; i === 9; i++) {
             form = `<p>Имя игрока ` + (i + 1) + `: <input name=name type=text maxlength="50" pattern="[\\sа-яА-ЯёЁ]+" required title="Допустимы только кириллица и пробелы."></p>`
             console.log(i);
         }
         document.getElementById("startgame").innerHTML = form;
     }
-    </script>
+    </script> -->
 </head>
 <body>
 <button onclick="countPlayers();">кнопка</button>
