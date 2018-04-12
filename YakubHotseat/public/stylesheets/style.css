@@ -1,8 +1,13 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color:powderblue;
 }
 
 a {
   color: #00B7FF;
+}
+
+textarea:required:invalid, input:required:invalid{
+  background-color: lightyellow;
 }
