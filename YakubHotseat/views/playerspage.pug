@@ -1,0 +1,36 @@
+doctype html
+html
+    head
+        title Enter your name
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        form(method="get", name="playersnames", action="/round")
+            p Имя первого игрока:
+                br
+                input(
+                type="text"
+                required=true
+                name="firstplayer"
+                maxlength=50
+                pattern="[\\sа-яА-ЯёЁ]+"
+                )
+            p Имя второго игрока:
+                br
+                input(
+                type="text"
+                required=true
+                name="secondplayer"
+                maxlength=50
+                pattern="[\\sа-яА-ЯёЁ]+"
+                )
+            p Имя третьего игрока:
+                br
+                input(
+                type="text"
+                required=true
+                name="thirdplayer"
+                maxlength=50
+                pattern="[\\sа-яА-ЯёЁ]+"
+                )
+            br
+            button(type="submit") Submit!
